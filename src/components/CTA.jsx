@@ -21,7 +21,7 @@ export function CTA() {
           </Link>
 
           <a
-            href="https://wa.me/34600000000"
+            href="https://wa.me/+34643012645"
             target="_blank"
             className="border border-white px-8 py-4 text-xs uppercase tracking-widest hover:bg-white hover:text-black"
           >
