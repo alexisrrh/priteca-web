@@ -1,56 +1,53 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 export function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#f7f4ef] px-6 pt-32">
-      <div className="mx-auto grid max-w-7xl items-center gap-14 md:grid-cols-[1fr_0.9fr]">
-        <div className="max-w-3xl">
-          <p className="mb-5 text-xs uppercase tracking-[0.35em] text-neutral-500">
-            Revestimientos · Porcelanatos · Acabados
+    <section className="relative min-h-screen w-full">
+      <img
+        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80"
+        alt="Obra de construcción"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+
+      <div className="absolute inset-0 bg-black/55" />
+
+      <div className="relative z-10 flex min-h-screen items-center px-6 pt-24">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mx-auto max-w-7xl text-white"
+        >
+          <p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-neutral-300 md:text-xs">
+            PRITECA · Reformas y construcción
           </p>
 
-          <h1 className="text-5xl font-light leading-[1.05] tracking-tight text-neutral-950 md:text-7xl">
-            Superficies que transforman espacios.
+          <h1 className="max-w-4xl text-4xl font-light leading-tight md:text-7xl">
+            Reformamos y construimos espacios de calidad.
           </h1>
 
-          <p className="mt-7 max-w-xl text-lg leading-8 text-neutral-600">
-            Soluciones en pisos, revestimientos y acabados para proyectos
-            residenciales, comerciales y arquitectónicos.
+          <p className="mt-6 max-w-2xl text-base leading-7 text-neutral-300 md:text-lg">
+            Especialistas en reformas de pisos, chalets, obras públicas y
+            piscinas.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#productos"
-              className="bg-neutral-950 px-8 py-4 text-xs uppercase tracking-[0.25em] text-white transition hover:bg-neutral-700"
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <Link
+              to="/servicios"
+              className="bg-white px-8 py-4 text-center text-xs uppercase tracking-widest text-black transition hover:bg-neutral-300"
             >
-              Ver colecciones
-            </a>
+              Ver servicios
+            </Link>
 
-            <a
-              href="#catalogos"
-              className="border border-neutral-950 px-8 py-4 text-xs uppercase tracking-[0.25em] text-neutral-950 transition hover:bg-neutral-950 hover:text-white"
+            <Link
+              to="/contacto"
+              className="border border-white px-8 py-4 text-center text-xs uppercase tracking-widest text-white transition hover:bg-white hover:text-black"
             >
-              Catálogos
-            </a>
+              Presupuesto
+            </Link>
           </div>
-        </div>
-
-        <div className="relative">
-          <div className="h-[620px] overflow-hidden rounded-t-full bg-neutral-300">
-            <img
-              src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154"
-              alt="Interior minimalista con acabados modernos"
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <div className="absolute -bottom-8 left-0 max-w-xs bg-white p-6 shadow-xl">
-            <p className="text-xs uppercase tracking-[0.28em] text-neutral-500">
-              Grupo RVA
-            </p>
-            <p className="mt-3 text-sm leading-6 text-neutral-600">
-              Diseño, asesoría y acabados para elevar cada proyecto.
-            </p>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
